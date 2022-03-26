@@ -1,0 +1,40 @@
+﻿<style>
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @@media (orientation: landscape) {
+        body {
+            flex-direction: row;
+        }
+    }
+
+    button {
+        font-size: 3rem;
+        flex-grow: 1;
+    }
+</style>
+
+<button class="button" onclick="prev()">
+    PREV
+</button>
+<button class="button" onclick="next()">
+    NEXT
+</button>
+
+
+<script>
+    function prev() {
+        fetch('/home/previous');
+    }
+
+    function next(){
+         fetch('/home/next');
+    }
+</script>
